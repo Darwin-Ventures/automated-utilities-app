@@ -2,6 +2,7 @@ package com.example.automatedutilitiesapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.automatedutilitiesapp.R
 
 class MainActivity : AppCompatActivity() {
 
