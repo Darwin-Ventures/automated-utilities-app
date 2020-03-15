@@ -6,7 +6,30 @@
     <string name="register">Register</string>
     <string name="login">Login</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--fragment-register-->
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="already_member_login_me">Already a member! Login me</string>
+    <string name="short_name_error">Name too short</string>
+    <string name="email_error">Invalid email address</string>
+    <string name="password_length_error">Password length too short</string>
+    <string name="password_mismatch_error">Passwords do not match</string>
+    <string name="registering_user">Registering user</string>
+    <string name="registered_successfully">Registered successfully</string>
+    <string name="icon">icon</string>
+
+    <!--fragment_login-->
+    <string name="forgot_password">Forgot password</string>
+    <string name="not_a_member_sign_up_now">Not a member. Sign up now</string>
+    <string name="enter_email_for_password_reset">Enter email for password reset</string>
+    <string name="logged_in">Logged in</string>
+    <string name="request_password">Request password</string>
+    <string name="cancel">Cancel</string>
+    <string name="email_sent">Email sent</string>
+    <string name="something_went_wrong_try_again">Something went wrong. Try again</string>
+    <string name="logging_in">Logging in</string>
+    <string name="sending_email">Sending email</string>
 
 </resources>
