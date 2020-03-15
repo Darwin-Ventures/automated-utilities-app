@@ -10,16 +10,32 @@
         android:name="com.example.automatedutilitiesapp.views.start.StartFragment"
         android:label="Start Fragment"
         tools:layout="@layout/fragment_start" />
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.automatedutilitiesapp.views.login_and_registration.LoginFragment"
         android:label="Login Fragment"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.automatedutilitiesapp.views.login_and_registration.RegisterFragment"
         android:label="Register Fragment"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 
 </navigation>
