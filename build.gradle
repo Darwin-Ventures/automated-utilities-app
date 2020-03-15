@@ -26,6 +26,27 @@ buildscript {
     ext.rxandroid_version = '2.1.1'
     ext.rxjava2_version = '2.1.1'
 
+    //Firebase
+    ext.firebase_analytics = '17.2.0'
+
+    //Google service
+    ext.google_services = '4.3.2'
+
+    //Firebase version
+    ext.firebase_version = '19.3.0'
+
+    //Firebase core
+    ext.firebase_core_version = '17.2.3'
+
+    //Firebase database
+    ext.firebase_database_version = '19.2.1'
+
+    //Firebase storage
+    ext.firebase_storage_version = '6.0.2'
+
+    //Firebasea UI auth
+    ext.firebase_ui_auth = '6.0.2'
+
 
     repositories {
         google()

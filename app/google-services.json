@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "658317248348",
+    "firebase_url": "https://automatet-utilities.firebaseio.com",
+    "project_id": "automatet-utilities",
+    "storage_bucket": "automatet-utilities.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658317248348:android:2085325dc72d3cd6ad2399",
+        "android_client_info": {
+          "package_name": "com.example.automatedutilitiesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658317248348-qdbo100ngvk7v4ko0dkhace6jmcuee72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.automatedutilitiesapp",
+            "certificate_hash": "b1a5a8e6cdccd9dadb253fe8c73360e2cfad5be9"
+          }
+        },
+        {
+          "client_id": "658317248348-b8lofctpid4uaav8b0ig4550vf93qdf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2FaWI5yPzIzlLGpQIVP5BWIzv95pI8rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658317248348-b8lofctpid4uaav8b0ig4550vf93qdf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

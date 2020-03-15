@@ -73,6 +73,21 @@ dependencies {
     //RxView-Binding
     implementation "com.jakewharton.rxbinding2:rxbinding:$rxjava2_version"
 
+    //Firebase Authentication
+    implementation "com.google.firebase:firebase-auth:$firebase_version"
+    implementation "com.google.firebase:firebase-core:$firebase_core_version"
+
+    //Firebase UI Auth
+    implementation "com.firebaseui:firebase-ui-auth:$firebase_ui_auth"
+
+    //Firebase Database
+    implementation "com.google.firebase:firebase-database:$firebase_database_version"
+
+    //Firebase Storage
+    implementation "com.firebaseui:firebase-ui-storage:$firebase_storage_version"
+
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+
 }
 
 kapt { generateStubs = true }
