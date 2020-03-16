@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.main.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+         <androidx.appcompat.widget.Toolbar
+             android:id="@+id/homeToolbar"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:background="?attr/colorPrimary"
+             android:minHeight="?attr/actionBarSize"
+             android:theme="?attr/actionBarTheme"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:title="Title"
+             app:titleTextColor="@color/colorPrimaryText" />
+
+         <fragment
+             android:id="@+id/fragmentHost"
+             android:name="androidx.navigation.fragment.NavHostFragment"
+             android:layout_width="0dp"
+             android:layout_height="0dp"
+             app:defaultNavHost="false"
+             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/homeToolbar"
+             app:navGraph="@navigation/bottom_navigation" />
+
+         <com.google.android.material.bottomnavigation.BottomNavigationView
+             android:id="@+id/bottomNavigationView"
+             android:layout_width="0dp"
+             android:layout_height="?attr/actionBarSize"
+             android:background="@color/colorPrimaryDark"
+             app:itemIconTint="@color/colorPrimaryText"
+             app:itemTextColor="@color/colorPrimaryText"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:labelVisibilityMode="selected"
+             app:menu="@menu/bottom_navigation_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -27,18 +27,20 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater)
 
-        navigateToRegistrationFragment(binding.notMemberButton)
+        navigateTo(binding.notMemberButton, R.id.registerFragment)
+        navigateTo(binding.loginButton, R.id.mainFragment)
 
         // Inflate the layout for this fragment
         return binding.root
     }
 
+
     /**
-     * Navigate to registerFragment
+     * Navigate to target
      */
-    private fun navigateToRegistrationFragment(view: View){
+    private fun navigateTo(view: View, destination: Int){
         RxView.clicks(view).map {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            findNavController().navigate(destination)
         }.throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe()
     }
 
