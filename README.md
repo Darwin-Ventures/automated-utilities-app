@@ -1,12 +1,13 @@
 # Automated Utilities App
 
-Automated Utilities is an Android Application that... 
+Automated Utilities is an Android application that... 
 
 ## APP Features.
 
 
 ## Screenshots
-
+<img src="https://github.com/Darwin-Ventures/automated-utilities-app/blob/develop/screenshots/register_view.png" width="300" > |
+<img src="https://github.com/Darwin-Ventures/automated-utilities-app/blob/develop/screenshots/login_view.png" width="300" > |
 
 ## Getting Started and Installation
 
