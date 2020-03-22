@@ -49,7 +49,7 @@ class RegisterFragment : Fragment() {
     private fun setRegisteredButtonTextColor(){
         val spannable = SpannableString(getString(R.string.already_member_login_me))
         spannable.setSpan(
-            ForegroundColorSpan(Color.WHITE),
+            ForegroundColorSpan(resources.getColor(R.color.colorPrimaryDark)),
             0,
             17,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE

@@ -50,9 +50,9 @@ class LoginFragment : Fragment() {
     private fun setNotMemberButtonTextColor() {
         val spannable = SpannableString(getString(R.string.not_a_member_sign_up_now))
         spannable.setSpan(
-            ForegroundColorSpan(Color.WHITE),
-            0,
+            ForegroundColorSpan(resources.getColor(R.color.colorPrimaryDark)),
             14,
+            25,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         notMemberButton.text = spannable

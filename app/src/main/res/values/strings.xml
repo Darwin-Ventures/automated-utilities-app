@@ -23,6 +23,7 @@
     <string name="registering_user">Registering user</string>
     <string name="registered_successfully">Registered successfully</string>
     <string name="icon">icon</string>
+    <string name="sign_up">Sign Up</string>
 
     <!--fragment_login-->
     <string name="forgot_password">Forgot password</string>
@@ -35,6 +36,7 @@
     <string name="something_went_wrong_try_again">Something went wrong. Try again</string>
     <string name="logging_in">Logging in</string>
     <string name="sending_email">Sending email</string>
+    <string name="sign_in">Sign In</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
