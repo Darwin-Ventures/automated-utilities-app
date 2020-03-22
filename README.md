@@ -46,7 +46,7 @@ NB: In order to be able to run instrumentation tests, you must have either a dev
 
 ### Break down into the end to end tests
 
-androidTest folder holds instrumentation tests and these test components/com.example.automatedutilitiesapp.views specific to Android (UI)
+androidTest folder holds instrumentation tests and these test com.example.automatedutilitiesapp.di.components/com.example.automatedutilitiesapp.views specific to Android (UI)
 
 test folder holds the unit tests that test the logic and algorithms being used within the application. (Backend)
 
