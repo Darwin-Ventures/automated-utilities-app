@@ -74,6 +74,4 @@ test folder holds the unit tests that test the logic and algorithms being used w
 
 [@Ajay](https://github.com/Darwin-Ventures)
 
-[@Simu13](https://github.com/simu13)
-
 [@Akshitverma4](https://github.com/akshitverma4)
