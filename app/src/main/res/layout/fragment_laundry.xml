@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".views.main.LaundryFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical" >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</layout>
+    <Button
+        android:id="@+id/newLaundryText"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_buttons"
+        android:text="@string/new_laundry"
+        android:textSize="30sp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/colorPrimary"
+
+        />
+    <Button
+        android:id="@+id/oldLaundryText"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_buttons"
+        android:text="@string/old_laundry"
+        android:textSize="30sp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/colorPrimary"
+
+        />
+
+
+
+    <Button
+        android:id="@+id/duesText"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_buttons"
+        android:text="@string/dues"
+        android:textSize="30sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+        android:textColor="@color/colorPrimary"
+
+        />
+
+
+
+</LinearLayout>
