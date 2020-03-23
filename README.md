@@ -6,8 +6,9 @@ Automated Utilities is an Android application that...
 
 
 ## Screenshots
+<img src="https://github.com/Darwin-Ventures/automated-utilities-app/blob/develop/screenshots/start_view.png" width="300" > |
 <img src="https://github.com/Darwin-Ventures/automated-utilities-app/blob/develop/screenshots/register_view.png" width="300" > |
-<img src="https://github.com/Darwin-Ventures/automated-utilities-app/blob/develop/screenshots/login_view.png" width="300" > |
+<img src="https://github.com/Darwin-Ventures/automated-utilities-app/blob/develop/screenshots/login_view.png" width="300" >|
 
 ## Getting Started and Installation
 
