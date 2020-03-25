@@ -40,6 +40,11 @@
     <string name="sending_email">Sending email</string>
     <string name="sign_in">Sign In</string>
 
+    <!--laundry_login-->
+    <string name="new_laundry">New Laundry</string>
+    <string name="old_laundry">Old Laundry</string>
+    <string name="dues">Dues</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
