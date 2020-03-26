@@ -2,7 +2,6 @@ package com.example.automatedutilitiesapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.automatedutilitiesapp.R
 import com.example.automatedutilitiesapp.di.AppModule.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
