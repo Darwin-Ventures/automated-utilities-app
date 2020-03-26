@@ -9,7 +9,11 @@
         android:id="@+id/startFragment"
         android:name="com.example.automatedutilitiesapp.views.start.StartFragment"
         android:label="Start Fragment"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"

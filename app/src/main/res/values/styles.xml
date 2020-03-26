@@ -9,4 +9,11 @@
         <item name="fontFamily">serif</item>
     </style>
 
+    <!--dialog theme-->
+    <style name="customDialogView" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogSpotColor">@color/colorSecondary</item>
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
+
 </resources>

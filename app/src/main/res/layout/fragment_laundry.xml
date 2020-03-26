@@ -8,68 +8,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/start_background"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
-
-        <TextView
-            android:id="@+id/laundryTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/laundry"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="@dimen/label_font"
-            android:textAllCaps="true"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="60dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
 
             <Button
                 android:id="@+id/newLaundryButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="100dp"
                 android:background="@drawable/custom_laundry_view_btn"
                 android:text="@string/new_laundry"
-                android:padding="10dp"
+                android:textStyle="bold"
+                android:padding="12dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/medium_font"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/laundryTextView"/>
+                app:layout_constraintBottom_toTopOf="@id/oldLaundryButton"/>
 
             <Button
                 android:id="@+id/oldLaundryButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:background="@drawable/custom_laundry_view_btn"
                 android:text="@string/old_laundry"
-                android:padding="10dp"
+                android:textStyle="bold"
+                android:padding="12dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/medium_font"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/duesLaundryButton"
-                app:layout_constraintTop_toBottomOf="@id/newLaundryButton"/>
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"/>
 
             <Button
                 android:id="@+id/duesLaundryButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/custom_laundry_view_btn"
                 android:text="@string/dues"
-                android:padding="10dp"
+                android:textStyle="bold"
+                android:padding="12dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/medium_font"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/oldLaundryButton"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

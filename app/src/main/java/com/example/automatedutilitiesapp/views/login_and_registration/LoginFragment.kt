@@ -28,7 +28,6 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater)
 
         navigateTo(binding.notMemberButton, R.id.registerFragment)
-        navigateTo(binding.loginButton, R.id.mainFragment)
 
         // Inflate the layout for this fragment
         return binding.root
