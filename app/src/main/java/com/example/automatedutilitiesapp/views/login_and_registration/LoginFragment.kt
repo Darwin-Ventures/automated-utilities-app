@@ -12,13 +12,21 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.automatedutilitiesapp.R
 import com.example.automatedutilitiesapp.databinding.FragmentLoginBinding
+import com.example.automatedutilitiesapp.di.components.CustomDialog
+import com.example.automatedutilitiesapp.di.components.Messaging
+import com.example.automatedutilitiesapp.helper.Validators
+import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.fragment_login.*
+import org.koin.android.ext.android.inject
 import java.util.concurrent.TimeUnit
 
 
 class LoginFragment : Fragment() {
 
+    private val messaging: Messaging by inject()
+    private val customDialog: CustomDialog by inject()
+    private val firebaseAuth = FirebaseAuth.getInstance()
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
@@ -27,19 +35,78 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater)
 
-        navigateTo(binding.notMemberButton, R.id.registerFragment)
+
+        loginUserListener(binding.loginButton)
+        navigateToRegistrationFragment(binding.notMemberButton)
+
 
         // Inflate the layout for this fragment
         return binding.root
     }
 
+    /**
+     * Valid of credentials
+     */
+    private fun loginUserListener(view: View){
+        RxView.clicks(view).map {
+            val email = emailEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            if(validateUserCredentials(email, password)){
+                requestFirebaseCredentialValidation(email, password)
+            }
+        }.throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe()
+    }
 
     /**
-     * Navigate to target
+     * Login user
      */
-    private fun navigateTo(view: View, destination: Int){
+    private fun requestFirebaseCredentialValidation(email: String, password: String) {
+        val progressDialog = customDialog.progressDialog(this.context!!, getString(R.string.logging_in))
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if(it.isSuccessful){
+                    navigateToMain()
+                    progressDialog.cancel()
+                    messaging.showToast("success",getString(R.string.logged_in))
+                }else{
+                    progressDialog.cancel()
+                    messaging.showToast("error", it.exception!!.message.toString())
+                }
+            }
+    }
+
+    /**
+     * Validate user data
+     */
+    private fun validateUserCredentials(email: String, password: String): Boolean {
+        var flag = true
+        if (!Validators.validateEmail(email)) {
+            binding.emailEditText.error = getString(R.string.email_error)
+            flag = false
+        }
+        if (!Validators.validatePasswordLength(password)) {
+            binding.passwordEditText.error = getString(R.string.password_length_error)
+            flag = false
+        }
+        return flag
+    }
+
+    /**
+     * Navigate to mainFragment
+     */
+    private fun navigateToMain(){
+        when (findNavController().currentDestination!!.id) {
+            R.id.loginFragment -> findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+        }
+    }
+
+    /**
+     * Navigate to registerFragment
+     */
+    private fun navigateToRegistrationFragment(view: View){
         RxView.clicks(view).map {
-            findNavController().navigate(destination)
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }.throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe()
     }
 
