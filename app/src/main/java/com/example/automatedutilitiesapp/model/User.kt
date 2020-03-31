@@ -1,4 +1,4 @@
-package com.example.automatedutilitiesapp.models
+package com.example.automatedutilitiesapp.model
 
 data class User(
     var name: String,
