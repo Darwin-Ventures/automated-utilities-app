@@ -19,5 +19,6 @@ class BasicActivity : AppCompatActivity() {
             androidContext(this@BasicActivity)
             modules(appModule)
         }
+
     }
 }

@@ -16,32 +16,44 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
 
+    private lateinit var  navHostFragment: NavHostFragment
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater)
 
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentHost) as NavHostFragment?
 
+        navHostFragment = (childFragmentManager.findFragmentById(R.id.fragmentHost) as NavHostFragment?)!!
 
-        if (navHostFragment != null) {
-            NavigationUI.setupWithNavController(
-                binding.bottomNavigationView,
-                navHostFragment.navController
-            )
-        }
+        NavigationUI.setupWithNavController(
+            binding.bottomNavigationView,
+            navHostFragment.navController
+        )
 
-        navHostFragment?.navController?.addOnDestinationChangedListener { _, destination, _ ->
-            binding.homeToolbar.title = destination.label!!
-        }
+        setBottomNavAndToolbar()
 
-        // Inflate the layout for this fragment
         return binding.root
     }
 
+    private fun setBottomNavAndToolbar() {
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.homeToolbar.menu.clear()
+            binding.homeToolbar.title = destination.label!!
+
+            when(destination.id){
+                R.id.oldLaundryFragment -> {
+                    binding.bottomNavigationView.visibility = View.GONE
+                }
+                else -> {
+                    binding.bottomNavigationView.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
 
     /**
      * Set bottomNavView as NavController

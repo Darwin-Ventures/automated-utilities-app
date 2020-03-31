@@ -1,6 +1,5 @@
 package com.example.automatedutilitiesapp.views.login_and_registration
 
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -16,7 +15,7 @@ import com.example.automatedutilitiesapp.di.components.CustomDialog
 import com.example.automatedutilitiesapp.di.components.Messaging
 import com.example.automatedutilitiesapp.helper.USERS_REFERENCE
 import com.example.automatedutilitiesapp.helper.Validators
-import com.example.automatedutilitiesapp.models.User
+import com.example.automatedutilitiesapp.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.jakewharton.rxbinding2.view.RxView

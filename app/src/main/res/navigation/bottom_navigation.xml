@@ -10,9 +10,25 @@
         android:name="com.example.automatedutilitiesapp.views.main.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/laundryFragment"
         android:name="com.example.automatedutilitiesapp.views.main.LaundryFragment"
         android:label="Laundry"
-        tools:layout="@layout/fragment_laundry" />
+        tools:layout="@layout/fragment_laundry" >
+        <action
+            android:id="@+id/action_laundryFragment_to_oldLaundryFragment"
+            app:destination="@id/oldLaundryFragment"
+            app:enterAnim="@anim/swipe_right_in"
+            app:exitAnim="@anim/swipe_left_out"
+            app:popEnterAnim="@anim/swipe_left_in"
+            app:popExitAnim="@anim/swipe_right_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/oldLaundryFragment"
+        android:name="com.example.automatedutilitiesapp.views.extra.OldLaundryFragment"
+        android:label="Old Laundry"
+        tools:layout="@layout/fragment_old_laundry" />
+
 </navigation>
