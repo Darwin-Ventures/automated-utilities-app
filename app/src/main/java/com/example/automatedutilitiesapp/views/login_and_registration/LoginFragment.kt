@@ -2,6 +2,7 @@ package com.example.automatedutilitiesapp.views.login_and_registration
 
 import android.graphics.Color
 import android.os.Bundle
+import android.text.InputType
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -10,6 +11,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.input.getInputField
+import com.afollestad.materialdialogs.input.input
 import com.example.automatedutilitiesapp.R
 import com.example.automatedutilitiesapp.databinding.FragmentLoginBinding
 import com.example.automatedutilitiesapp.di.components.CustomDialog
@@ -19,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.koin.android.ext.android.inject
+import sun.bob.mcalendarview.MarkStyle.text
 import java.util.concurrent.TimeUnit
 
 
@@ -38,10 +43,48 @@ class LoginFragment : Fragment() {
 
         loginUserListener(binding.loginButton)
         navigateToRegistrationFragment(binding.notMemberButton)
-
+        forgottenPasswordListener(binding.forgetPasswordButton)
 
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    /**
+     * Handles forgotten password request
+     */
+    private fun forgottenPasswordListener(view: View) {
+        RxView.clicks(view).map {
+            MaterialDialog(this.context!!).show {
+                input(
+                    hint = getString(R.string.email),
+                    waitForPositiveButton = true,
+                    allowEmpty = false,
+                    inputType = InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS
+                )
+                positiveButton(text = getString(R.string.request_password)){
+                    this.getInputField().text.toString()
+                    requestPasswordReset(text)
+                }
+                negativeButton(R.string.CANCEL)
+            }
+        }.throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe()
+
+    }
+
+    /**
+     *  Sends password reset request
+     */
+    private fun requestPasswordReset(email: String) {
+        firebaseAuth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+
+                    messaging.showToast("success", getString(R.string.check_your_mail))
+                }
+                else {
+                    messaging.showToast("error", getString(R.string.error_occurred))
+                }
+            }
     }
 
     /**
